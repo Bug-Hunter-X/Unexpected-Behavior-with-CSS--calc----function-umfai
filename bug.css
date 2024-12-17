@@ -1,0 +1,20 @@
+The CSS property `calc()` is used to perform calculations in CSS. However, it can lead to unexpected results if not used carefully. One common issue is the use of spaces in the expression. Consider this code: 
+```css
+width: calc(100% - 20px);
+```
+This is correct. But this is wrong:
+```css
+width: calc( 100% - 20px );
+```
+Unnecessary spaces can cause the calculation to fail. 
+Another issue is related to operator precedence.  Ensure you use parenthesis to force the order of operations you intend:
+```css
+height: calc((100vw / 16) * 9);
+/* Correct */
+height: calc(100vw / 16 * 9); /* Incorrect, might not calculate as intended*/
+```
+Lastly, be careful about unit mismatch in `calc()` expressions. For example:
+```css
+width: calc(100% + 20); /* Incorrect: 20 has no unit */
+width: calc(100% + 20px); /* Correct */
+```
