@@ -1,0 +1,11 @@
+The solutions address the issues identified in `bug.css` by:
+1. Removing unnecessary spaces within the `calc()` expressions
+2. Adding parenthesis to ensure correct operator precedence.
+3. Ensuring consistent units across the calculation.
+```css
+/* Correct use of calc() */
+width: calc(100% - 20px);
+height: calc((100vw / 16) * 9);
+width: calc(100% + 20px);
+```
+Always double-check your `calc()` expressions for proper syntax and unit consistency to avoid unexpected issues.  Thorough testing is crucial.
